@@ -1,0 +1,25 @@
+body {
+  font: 500 16px sans-serif;
+  line-height: 20px;
+}
+
+a {
+  color: #23d;
+}
+
+.fullscreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.info {
+  position: fixed;
+  padding: 8px;
+  left: 16px;
+  bottom: 16px;
+  background: #eee;
+  border-radius: 4px;
+}

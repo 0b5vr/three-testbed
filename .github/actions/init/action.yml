@@ -1,0 +1,29 @@
+name: Init
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    - name: Setup Git Config
+      shell: bash
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      with:
+        version: 8
+        run_install: false
+    - name: Cache Deps
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-pnpm-${{ hashFiles( 'pnpm-lock.json' ) }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-
+    - name: Fetch deps
+      shell: bash
+      run: pnpm install

@@ -6,7 +6,6 @@ const { width, height } = canvas.getBoundingClientRect();
 
 // -- renderer -------------------------------------------------------------------------------------
 const renderer = new THREE.WebGLRenderer( { canvas } );
-renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.setSize( width, height, false );
 renderer.setPixelRatio( window.devicePixelRatio );
 

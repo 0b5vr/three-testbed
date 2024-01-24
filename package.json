@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@pixiv/three-vrm": "^2.0.6",
+    "@pixiv/three-vrm": "^2.0.9",
     "@types/three": "^0.160.0",
     "camera-controls": "^2.7.2",
     "rimraf": "^5.0.5",

@@ -14,7 +14,7 @@
     "@types/three": "^0.160.0",
     "camera-controls": "^2.7.2",
     "rimraf": "^5.0.5",
-    "three": "^0.160.0",
+    "three": "^0.160.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "webgl-lint": "^1.11.3",

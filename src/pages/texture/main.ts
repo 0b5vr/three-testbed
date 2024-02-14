@@ -21,7 +21,7 @@ const scene = new THREE.Scene();
 
 // -- texture --------------------------------------------------------------------------------------
 const map = new THREE.TextureLoader().load( uvGridPng );
-map.wrapS = map.wrapT = THREE.RepeatWrapping;
+map.colorSpace = THREE.SRGBColorSpace;
 
 const geometry = new THREE.PlaneGeometry();
 const material = new THREE.MeshBasicMaterial( { map } );
@@ -41,4 +41,22 @@ window.addEventListener( 'resize', () => {
 
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
+} );
+
+// -- dnd handler ----------------------------------------------------------------------------------
+window.addEventListener( 'dragover', ( event ) => {
+  event.preventDefault();
+} );
+
+window.addEventListener( 'drop', async ( event ) => {
+  event.preventDefault();
+
+  const file = event.dataTransfer?.files[ 0 ];
+
+  if ( file != null ) {
+    const url = URL.createObjectURL( file );
+    const map = new THREE.TextureLoader().load( url, () => URL.revokeObjectURL( url ) );
+    material.map = map;
+    map.colorSpace = THREE.SRGBColorSpace;
+  }
 } );

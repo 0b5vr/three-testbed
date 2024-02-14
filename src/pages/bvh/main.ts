@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import { BVHLoader } from 'three/addons/loaders/BVHLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { BVHLoader } from 'three/examples/jsm/loaders/BVHLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import pirouetteBvh from '../../assets/pirouette.bvh?url';
 
 const _v3A = new THREE.Vector3();

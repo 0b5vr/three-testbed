@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { FullScreenQuad } from 'three/addons/postprocessing/Pass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 
 const canvas = document.getElementById( 'canvas' ) as HTMLCanvasElement;
 const { width, height } = canvas.getBoundingClientRect();

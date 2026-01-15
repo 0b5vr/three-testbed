@@ -23,3 +23,19 @@ a {
   background: #eee;
   border-radius: 4px;
 }
+
+.back-button {
+  appearance: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  background: url('../assets/back-arrow.svg') no-repeat center center;
+  background-size: contain;
+  background-color: #eee;
+  cursor: pointer;
+  font-size: 0;
+}

@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { VRMUtils } from '@pixiv/three-vrm';
 import avocadoGlb from '../../assets/Avocado.glb?url';
 import GUI from 'lil-gui';
+import { GLTFAnimationPointerExtension } from "@needle-tools/three-animation-pointer";
 
 const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 const { width, height } = canvas.getBoundingClientRect();
@@ -41,6 +42,7 @@ scene.add(directionalLight);
 
 // -- gltf -----------------------------------------------------------------------------------------
 const loader = new GLTFLoader();
+loader.register((parser) => new GLTFAnimationPointerExtension(parser));
 
 let currentGltfScene: THREE.Group | null = null;
 let currentAnimationMixer: THREE.AnimationMixer | null = null;
